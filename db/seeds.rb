@@ -3,6 +3,20 @@
 #
 # Examples:
 #
+
+require 'open-uri'
+# https://github.com/flori/json
+require 'json'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 ingredients = Ingredient.create([{name: "lemon"}, {name: "ice"}, {name: "mint leaves"}, {name: "tomato sauce"}, {name: "panchetta"}, {name: "pasta"}])
+url =  "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+read_file = open(url).read
+result = JSON.parse(read_file)
+result.each do |r|
+  answer = p "#{r["strIngredient1".to_i]}"
+   answer.each do |a|
+    p "#{a["strIngredient1"]}"
+  end
+end
+
