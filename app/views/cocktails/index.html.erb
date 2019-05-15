@@ -1,0 +1,30 @@
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" /> -->
+
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   <%= link_to "New Cocktail", new_cocktail_path, class: "btn btn-success"  %>
+  </div>
+</div>
+
+
+    <div class="cards">
+       <% @cocktails.each do |cocktail| %>
+
+        <div class="card-trip">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+          <div class="card-trip-infos">
+            <div>
+              <%= cocktail.name %>
+              <%= link_to "Description", cocktail %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+
+
+
