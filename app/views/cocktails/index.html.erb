@@ -1,20 +1,19 @@
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" /> -->
-<h2>Welcome to Cocktail Makers</h1>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-   <%= link_to "New Cocktail", new_cocktail_path, class: "btn btn-success"  %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/1028637/pexels-photo-1028637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
+  <div class="container">
+   <div class="opening_title">
+    <h1><strong>Welcome</strong> to <strong>Cocktail Creator</strong>!</h1>
+   </div>
   </div>
 </div>
+
 
 
     <div class="cards">
        <% @cocktails.each do |cocktail| %>
 
         <div class="card-trip">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+          <%= cl_image_tag cocktail.photo %>
           <div class="card-trip-infos">
             <div>
               <%= cocktail.name %>
@@ -26,5 +25,6 @@
 
     </div>
 
-
-
+   <div class="text-center">
+   <%= link_to "New Cocktail", new_cocktail_path, class: "btn btn-success"  %>
+   </div>

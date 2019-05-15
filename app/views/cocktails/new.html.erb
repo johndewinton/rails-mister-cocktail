@@ -1,11 +1,18 @@
+<div class="add_cocktail">
 <h1>Add a cocktail</h1>
+</div>
 ​
 <div class="container">
  <div class="row">
   <div class="col-sm-6 offset-sm-3">
    <%= simple_form_for [@cocktail] do |f| %>
    <%= f.input :name %>
+   <%= f.input :photo %>
+   <%= f.input :photo_cache, as: :hidden %>
+  <div class="show_index">
    <%= f.submit class: "btn btn-primary" %>
+   <%= link_to 'Back to index', cocktails_path, class: "btn btn-danger" %>
+  </div>
    <% end %>
   </div>
  </div>

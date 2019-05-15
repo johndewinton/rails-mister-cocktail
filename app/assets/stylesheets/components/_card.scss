@@ -5,7 +5,8 @@
   width:700px;
   padding-left:10px;
   padding-top:10px;
-  background-color: #fbede9
+  background-color: #beeef7;
+  margin: 0 auto;
 }
 
 // Smallest device
@@ -54,6 +55,8 @@
   // grid-template-columns: 1fr, 1fr, 1fr, 1fr;
   // grid-gap: 16px;
   padding: 10px;
+  justify-content:center;
+  text-align:center;
 
 }
 

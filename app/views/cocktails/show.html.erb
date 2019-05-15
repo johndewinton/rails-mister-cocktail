@@ -1,21 +1,33 @@
-
-<h1>Cocktail: <%= @cocktail.name %></h1>
-<% @cocktail.doses.each do |d| %>
-<p><%= d.ingredient.name %></p>
-<p><%= d.description %></p>
-<%= link_to 'Delete dose', dose_path(d), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+<div class ="cocktail_1">
+<h1><%= @cocktail.name %></h1>
+</div>
 
 
+<div class ="image">
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+</div>
 <div class="container">
  <div class="row">
   <div class="col-sm-6 offset-sm-3">
   <%= simple_form_for [@cocktail, @dose] do |f| %>
    <%= f.input :description %>
    <%= f.association :ingredient %>
+  <div class="show_index">
    <%= f.submit "Create dose", class: "btn btn-primary" %>
+    <%= link_to 'Back to index', cocktails_path, class: "btn btn-warning" %>
+    <%= link_to "Delete cocktails", cocktail_path(@cocktail), method: :delete, class: "btn btn-danger" %>
+  </div>
   <% end %>
   </div>
- </div>
- <%= link_to 'Back to index', cocktails_path %>
+
+<div class="doses_list">
+ <h2>Doses's List:</h2>
+ <% @cocktail.doses.each do |d| %>
+ <p><%= d.ingredient.name %></p>
+ <p><%= d.description %></p>
+ <%= link_to 'Delete dose', dose_path(d), method: :delete, data: { confirm: 'Are you sure?' } %>
+ <% end %>
+</div>
+
+
 </div>
