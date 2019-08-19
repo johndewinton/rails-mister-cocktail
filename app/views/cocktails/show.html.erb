@@ -10,8 +10,8 @@
  <div class="row">
   <div class="col-sm-6 offset-sm-3">
   <%= simple_form_for [@cocktail, @dose] do |f| %>
-   <%= f.input :description %>
    <%= f.association :ingredient %>
+   <%= f.input :description %>
   <div class="show_index">
    <%= f.submit "Create dose", class: "btn btn-primary" %>
     <%= link_to 'Back to index', cocktails_path, class: "btn btn-warning" %>
@@ -21,11 +21,11 @@
   </div>
 
 <div class="doses_list">
- <h2>Doses's List:</h2>
+ <h2>Ingredients:</h2>
  <% @cocktail.doses.each do |d| %>
  <p><%= d.ingredient.name %></p>
  <p><%= d.description %></p>
- <%= link_to 'Delete dose', dose_path(d), method: :delete, data: { confirm: 'Are you sure?' } %>
+ <%= link_to 'Delete ingredient', dose_path(d), method: :delete, data: { confirm: 'Are you sure?' } %>
  <% end %>
 </div>
 
